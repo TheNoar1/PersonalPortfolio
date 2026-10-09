@@ -1,1 +1,91 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Creative Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle">Vibe Shift</button>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="hero-content">
+                <h1 class="reveal">YOUR NAME</h1>
+                <p class="headline reveal">Creative Developer & Digital Architect</p>
+                <a href="#projects" class="cta-button reveal">Explore My Work</a>
+            </div>
+        </section>
+
+        <section id="about" class="about reveal">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Who am I?</h2>
+                    <p>I bridge the gap between technical precision and bold visual storytelling. My work is about creating digital experiences that don't just function, but demand attention.</p>
+                    <p>Specializing in high-performance web apps and creative frontend interfaces that push the boundaries of the modern browser.</p>
+                </div>
+                <div class="about-visual"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects reveal">
+            <h2>Selected Works</h2>
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="creative">Creative</button>
+                <button class="filter-btn" data-filter="technical">Technical</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card large" data-category="technical">
+                    <h3>The Masterpiece Project</h3>
+                    <p>A full-scale application focusing on innovative UX and complex system architecture.</p>
+                </div>
+                <div class="project-card small" data-category="creative">
+                    <h3>Creative Experiment 01</h3>
+                    <p>Exploring generative art via CSS and JS.</p>
+                </div>
+                <div class="project-card small" data-category="technical">
+                    <h3>Utility Tool</h3>
+                    <p>A streamlined tool for developer productivity.</p>
+                </div>
+                <div class="project-card medium" data-category="creative">
+                    <h3>Digital Brand Identity</h3>
+                    <p>A cohesive visual system for a modern startup.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills reveal">
+            <h2>Toolbox</h2>
+            <div class="skills-marquee">
+                <span>React</span> <span>TypeScript</span> <span>Three.js</span> <span>Figma</span> <span>Next.js</span> <span>Node.js</span> <span>Tailwind</span> <span>Python</span>
+                <!-- Duplicate for seamless loop -->
+                <span>React</span> <span>TypeScript</span> <span>Three.js</span> <span>Figma</span> <span>Next.js</span> <span>Node.js</span> <span>Tailwind</span> <span>Python</span>
+            </div>
+        </section>
+
+        <section id="contact" class="contact reveal">
+            <h2>Let's Build<br>Something Crazy</h2>
+            <div class="contact-links">
+                <a href="mailto:hello@example.com">Email</a>
+                <a href="https://github.com">GitHub</a>
+                <a href="https://linkedin.com">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>
