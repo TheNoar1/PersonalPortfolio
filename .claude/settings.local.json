@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(git add *)",
-      "Bash(git commit -m 'Modularize portfolio structure and implement Bold & Creative interactivity *)"
+      "Bash(git commit -m 'Modularize portfolio structure and implement Bold & Creative interactivity *)",
+      "Bash(git mv *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
