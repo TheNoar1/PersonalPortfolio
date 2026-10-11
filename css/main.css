@@ -32,8 +32,7 @@ body {
     overflow-x: hidden;
     width: 100%;
     margin: 0;
-    display: flex;
-    justify-content: center;
+    display: block;
 }
 
 h1, h2, h3 {
@@ -60,13 +59,13 @@ h1, h2, h3 {
 /* Background Boxes Modernized */
 .boxes-container {
     position: absolute;
-    width: 300vw;
-    height: 300vh;
-    top: -100vh;
-    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
     z-index: 1;
-    pointer-events: auto;
-    transform: skewX(-48deg) skewY(14deg) scale(0.8) rotate(0deg);
+    pointer-events: none;
+    transform: skewX(-10deg) skewY(5deg) scale(1.2);
     opacity: 0.3;
     mask-image: radial-gradient(circle at center, black 20%, transparent 70%);
     -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 70%);
