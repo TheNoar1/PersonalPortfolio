@@ -1,0 +1,300 @@
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-primary);
+    color: var(--bg-color);
+    padding: 18px 40px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: 'League Spartan', sans-serif;
+    transition: var(--transition);
+    box-shadow: 0 10px 20px rgba(93, 64, 55, 0.3);
+}
+
+.cta-button:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(93, 64, 55, 0.5);
+    background-color: #fff;
+}
+
+
+.filter-btn {
+    background: var(--surface-color);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 10px 25px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--accent-primary);
+    color: var(--bg-color);
+    border-color: var(--accent-primary);
+}
+
+.project-card {
+    background: var(--surface-color);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s var(--ease-expo), border-color 0.3s var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    --spotlight-size: 200px;
+    --spotlight-opacity: 0.15;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: 1;
+    border-radius: inherit;
+    padding: 1px;
+    background: radial-gradient(
+        var(--spotlight-size) var(--spotlight-size) at
+        var(--x, 0) var(--y, 0),
+        var(--accent-primary),
+        transparent 100%
+    ) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        var(--spotlight-size) var(--spotlight-size) at
+        var(--x, 0) var(--y, 0),
+        rgba(93, 64, 55, var(--spotlight-opacity)),
+        transparent 100%
+    );
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+.project-card:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 20px 40px rgba(93, 64, 55, 0.15);
+}
+
+
+.project-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.project-card.large { grid-column: span 2; grid-row: span 2; }
+.project-card.medium { grid-row: span 2; }
+.project-card.small { grid-column: span 1; grid-row: span 1; }
+
+/* Certificate Modal Styles */
+.cert-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.cert-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cert-modal-content {
+    background: var(--surface-color);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8);
+    transition: transform 0.4s var(--ease-expo);
+}
+
+.cert-modal-overlay.active .cert-modal-content {
+    transform: scale(1);
+}
+
+.cert-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.cert-modal-close:hover {
+    background: var(--accent-primary);
+    color: var(--bg-color);
+}
+
+.cert-modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+}
+
+.cert-modal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cert-modal-info h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.cert-detail-row {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-detail-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.cert-detail-value {
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.cert-skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.cert-skill-tag {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+}
+
+.cert-modal-link {
+    margin-top: 25px;
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.cert-modal-link:hover {
+    opacity: 0.8;
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .cert-modal-content {
+        grid-template-columns: 1fr;
+        padding: 30px;
+        max-height: 95vh;
+    }
+    .cert-modal-image {
+        max-height: 300px;
+    }
+}
+
+#cursor {
+
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: normal;
+    transition: width 0.3s var(--ease-expo), height 0.3s var(--ease-expo), background-color 0.3s ease;
+}
+
+#cursor.hovering {
+    width: 60px;
+    height: 60px;
+    background: var(--text-main);
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%) scale(1);
+}

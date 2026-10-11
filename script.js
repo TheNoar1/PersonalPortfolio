@@ -111,6 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
+            // Update Spotlight Coordinates
+            card.style.setProperty('--x', `${x}px`);
+            card.style.setProperty('--y', `${y}px`);
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
 

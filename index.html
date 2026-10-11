@@ -6,8 +6,19 @@
     <title>Portfolio | Creative Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=League+Spartan:wght@400;500;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Lemon Milk';
+            src: url('https://fonts.cdnfonts.com/s/15241/LemonMilk.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
 </head>
 <body class="theme-dark">
     <div class="grain-overlay"></div>
@@ -23,19 +34,24 @@
         <section id="hero" class="hero">
             <div class="blob blob-1"></div>
             <div class="blob blob-2"></div>
+            <div id="boxes-grid" class="boxes-container"></div>
             <div class="hero-content">
-                <h1 class="split-text">RAFA KONTOL</h1>
+                <div class="status-label text-tiny">Digital Architect // Available for work 2026</div>
+                <h1 class="split-text text-massive">RAFA GANTENG</h1>
                 <p class="headline reveal">Creative Developer & Digital Architect</p>
                 <a href="#projects" class="cta-button reveal">Explore My Work</a>
             </div>
         </section>
 
         <section id="about" class="about reveal">
+            <div class="section-label text-tiny">01 // BIOGRAPHY</div>
             <div class="about-grid">
                 <div class="about-text">
                     <h2 class="split-text">Who am I?</h2>
-                    <p>I bridge the gap between technical precision and bold visual storytelling. My work is about creating digital experiences that don't just function, but demand attention.</p>
-                    <p>Specializing in high-performance web apps and creative frontend interfaces that push the boundaries of the modern browser.</p>
+                    <div class="about-columns">
+                        <p>I bridge the gap between technical precision and bold visual storytelling. My work is about creating digital experiences that don't just function, but demand attention.</p>
+                        <p>Specializing in high-performance web apps and creative frontend interfaces that push the boundaries of the modern browser.</p>
+                    </div>
                 </div>
                 <div class="about-visual">
                     <img src="assets/Screenshot 2026-10-08 014430.png" alt="Rafa Kontol Profile Picture" class="profile-img">
@@ -79,8 +95,26 @@
             </div>
         </section>
 
+        <section id="certificates" class="certificates reveal">
+            <div class="section-label text-tiny">03 // CREDENTIALS</div>
+            <h2 class="split-text">Certificates</h2>
+
+            <div class="fan-container">
+                <div id="fan-carousel" class="fan-layout"></div>
+                <div class="fan-controls">
+                    <button id="fan-prev" class="fan-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+                    </button>
+                    <div id="fan-dots" class="fan-dots"></div>
+                    <button id="fan-next" class="fan-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="contact reveal">
-            <h2 class="split-text">Let's Build<br>Something Crazy</h2>
+            <h2 class="split-text">Let's Connect</h2>
             <div class="contact-links">
                 <a href="mailto:hello@example.com" class="magnetic">Email</a>
                 <a href="https://github.com" class="magnetic">GitHub</a>
@@ -94,6 +128,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
-    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script type="module" src="js/main.js" defer></script>
 </body>
 </html>

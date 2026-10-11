@@ -1,0 +1,114 @@
+:root {
+    /* Vintage Paper Theme */
+    --bg-color: #f4f1ea;
+    --surface-color: #ede9df;
+    --accent-primary: #5d4037;
+    --accent-secondary: #8d6e63;
+    --text-main: #2c2c2c;
+    --text-muted: #5f5f5f;
+    --glass: rgba(237, 233, 223, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Lemon Milk', 'League Spartan', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 0.9;
+}
+
+.text-tiny {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    color: var(--text-muted);
+    font-family: 'League Spartan', sans-serif;
+}
+
+.text-massive {
+    font-size: clamp(4rem, 15vw, 12rem);
+    line-height: 0.8;
+}
+
+/* Background Boxes Modernized */
+.boxes-container {
+    position: absolute;
+    width: 300vw;
+    height: 300vh;
+    top: -100vh;
+    left: -100vw;
+    z-index: 1;
+    pointer-events: auto;
+    transform: skewX(-48deg) skewY(14deg) scale(0.8) rotate(0deg);
+    opacity: 0.3;
+    mask-image: radial-gradient(circle at center, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 70%);
+}
+
+.box-row {
+    display: flex;
+}
+
+.box-cell {
+    width: 64px;
+    height: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: background-color 0s linear;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.box-cell:hover {
+    background-color: var(--hover-color, var(--accent-primary));
+    transition: background-color 0s linear;
+}
+
+.box-plus {
+    position: absolute;
+    top: -14px;
+    left: -22px;
+    width: 24px;
+    height: 24px;
+    color: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
