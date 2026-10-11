@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         orientation: 'vertical',
         gestureOrientation: 'vertical',
         smoothWheel: true,
+        syncTouch: true,
     });
 
     function raf(time) {
