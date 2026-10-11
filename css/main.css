@@ -59,8 +59,8 @@ h1, h2, h3 {
 /* Background Boxes Modernized */
 .boxes-container {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     z-index: 1;
@@ -69,6 +69,7 @@ h1, h2, h3 {
     opacity: 0.3;
     mask-image: radial-gradient(circle at center, black 20%, transparent 70%);
     -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 70%);
+    overflow: hidden;
 }
 
 .box-row {
